@@ -1,0 +1,117 @@
+---
+import NavBar from "../components/navbar.vue";
+import Footer from "../components/footer.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import { ViewTransitions, slide } from 'astro:transitions';
+
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+
+
+	</head>
+	<body>
+		<NavBar client:load></NavBar>
+		<slot/>
+		<Footer></Footer>
+	</body>
+</html>
+<style is:global>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+
+	--gradient-olive:linear-gradient(45deg, #1c4626 0%, #FFFB7D 100%);
+	--gradient-olive-dark:linear-gradient(43deg, #c58931 0%, #7f4e15 46%, #5a3119 100%);
+	--gradient-purple:linear-gradient(43deg, #41094c 0%, #3f073c 46%, #9a28a4 100%);
+	--dark-background :hsla(0, 0%, 0%, 0.7);
+	--ff-bebas:'Bebas Neue';
+	--shadow-olive: 10px 10px 110px 12px rgba(173,199,6,0.87);
+	--shadow-black:  3px 3px 52px 0px rgba(0,0,0,0.75);
+
+
+}    
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto",system-ui;
+  color-scheme: light ;
+  scroll-behavior: smooth;
+  
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	background-image: url('/images/olives.jpg');
+	background-size: cover;
+	
+
+}
+
+h1{
+	font-family: var(--ff-bebas);
+	font-size: max(6vw, 4vh);
+	z-index: 100;
+}
+.flex{
+	--gap:1rem;
+	display: flex;
+	gap: var(--gap);
+}
+
+.flex-column{
+	--gap:1rem;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+}
+
+
+</style>
+
+<script>
+  window.addEventListener('scroll', function() {
+  const body = document.body;
+  const image = new Image(); // Preload image for smoother rendering
+  image.src = '/images/olives.jpg'; // Adjust the path if necessary
+
+  const scrollTop = window.scrollY; // Get current scroll position
+
+  // Calculate parallax movement based on scroll position (adjust multiplier as needed)
+  const parallaxMovement = scrollTop * 0.4; // Adjust multiplier for desired effect
+
+  // Update background position using CSS background-position
+  body.style.backgroundPositionY = `${parallaxMovement}px`;
+});
+
+
+</script>

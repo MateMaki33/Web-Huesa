@@ -1,0 +1,109 @@
+<section class="hero">
+    <img class="img-hero-bw" src="/images/picos-bw2.jpg" alt="picos del guadiana">
+    <div class="img-hero-color"></div>
+</section>
+<article class="hero-text">
+    <h1>Bienvenidos a <span>Huesa</span></h1>
+    <p>Un hogar de tradiciones</p>
+</article>
+
+<style>
+    .hero-text{
+		position: absolute;
+        width: 100%;
+        max-height: 30vh;
+        inset: 15vw 0 0 0;
+        padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+        color: white;
+
+	}
+
+    @media (max-width: 35em){
+        .hero-text{
+            inset:5vh 0 0 0;
+            
+        }
+    }
+
+	.hero-text h1{
+		font-family: "Bebas Neue";
+        inset: 0;
+		background: linear-gradient(90deg, rgb(124, 203, 20) 0%, rgba(72,73,75,1) 27%, rgba(112,96,80,1) 100%);
+		background-size: 800px;
+		background-clip: text;
+		color: transparent;
+		font-size: clamp(10vw, 50%, 6vw);
+		animation: colortext forwards;
+		animation-timeline: scroll();
+	}
+
+
+	.hero-text p{
+		font-size: 4vw;
+
+	}
+
+	@keyframes colortext{
+		to{
+			background-position-x: 800px ;
+		}
+	}
+	
+	img{
+		width: 100%;
+		display: block;
+	}
+	.hero{
+		position: relative;
+		
+		
+	}
+	
+	.img-hero-color{
+		position: absolute;
+		inset:0;
+		background-image: url("/images/picos-color2.jpg");
+		background-size:cover;
+
+		-webkit-mask-image: url("/images/mask-2.png");
+		-webkit-mask-size: cover;
+		-webkit-mask-position: 0% 0%;
+
+		mask-image: url("/images/mask-2.png");
+		mask-size: cover;
+		mask-position: 0% 0%;
+
+		animation: addcolor linear forwards;
+		animation-duration: 2s;
+		animation-timeline: view(100%);
+				
+
+	}
+
+	@media(max-width:1170px){
+		.img-hero-color{
+		animation: addcolor linear forwards;
+		animation-timeline: view(y);
+
+	}
+}
+
+	.mask-animation{
+		animation: addcolor 3000ms steps(100) forwards;
+	}
+
+
+	@keyframes addcolor{
+		0%{
+			-webkit-mask-position: 0% 0%;
+			mask-position: 0% 0%;
+		}
+		100%{
+			-webkit-mask-position: 100% 0%;
+			mask-position: 100% 0%;
+		}
+	}
+</style>

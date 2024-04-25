@@ -1,0 +1,129 @@
+<footer>
+    <section class="flex-column-space flex-column social">
+        <div class="flex">
+            <img src="/images/logo.png" alt="logo">
+            <h3>Diputación de Jaén</h3>
+        </div>
+        
+
+        <div class="social-media flex">
+            
+           <a href="https://www.facebook.com/ayuntamientodehuesa/?locale=es_ES" title="Enlace externo: facebook " target="_blank"><img src="/images/icons/facebook2.svg" alt="icono facebook"></a>
+           <a href="https://www.facebook.com/ayuntamientodehuesa/?locale=es_ES" title="Enlace externo: twitter " target="_blank"><img src="/images/icons/twitter.svg" alt="icono facebook"></a>
+           <a href="https://www.facebook.com/ayuntamientodehuesa/?locale=es_ES" title="Enlace externo: instagram " target="_blank"><img src="/images/icons/instagram.svg" alt="icono facebook"></a>
+            
+        </div>
+    </section>
+
+    <section class="link-container util">
+            <h4>Utilidades</h4>
+            <ul>
+                <li><a href="http://www.ujaen.es/huesped/planestra/index2.html" title="Enlace externo plan estratégico Jaen" target="_blank">Plan Estratégico de Jaén</a></li>
+                <li><a href="http://www.dipujaen.es/" title="Enlace Externo: http://www.dipujaen.es/" target="_blank">Diputación Provincial de Jaén</a></li>
+                <li><a href="http://activa.jaen.es/" title="Enlace Externo: http://activa.jaen.es/" target="_blank">Activa Jaén</a></li>
+                <li><a href="http://www.060.es/" title="Enlace Externo: http://www.060.es/" target="_blank">Administración del Estado - 060</a></li>
+                <li><a href="http://www.catastro.meh.es/" title="Enlace Externo: http://www.catastro.meh.es/" target="_blank">Catastro</a></li>
+                <li><a href="http://www.observatorioagrario.org/" title="Enlace Externo: http://www.observatorioagrario.org/" target="_blank">Observatorio Agrario Andaluz</a></li>
+            </ul>
+    </section>
+
+    <section class="link-group culture">
+            <h4>Cultura</h4>
+            <ul>
+                <li><a href="http://www.ujaen.es/" title="Enlace Externo: Universidad Jaen" target="_blank">Universidad de Jaén</a></li>
+                <li><a href="https://www.jaenparaisointerior.es/es/" title="Enlace Externo: Jaen Paraiso Interior" target="_blank">Turismo</a></li>
+                <li><a href="https://colegioalferezsegurahuesa.weebly.com/" title="Enlace externo: Colegio Alferez Segura">CEIP Alferez Segura</a></li>
+                <li><a href="https://sites.google.com/iespicosdelguadiana.com/inicio/inicio?authuser=0" title="Enlace externo: IES Picos del Guadiana">IES Picos Del Guadiana</a></li>
+            </ul>
+    </section>
+
+    <hr color="black" class="separator" />
+
+    <section class="privacy-container privacy">
+        <h3>Auntamiento de Huesa</h3>
+        <div class="privacy-links">
+            <ul class="flex">
+                <li><a href="" title="">Información Legal |</a></li>
+                <li><a href="" title="">Cookies |</a></li>
+                <li><a href="" title="">Accesibilidad</a></li>
+            </ul>
+        </div>
+    </section>
+
+</footer>
+
+<style>
+
+
+    footer{
+        margin-top: 50vh;    
+        display: grid;
+        row-gap: 2rem;
+        grid-template-columns: 30% 30% 30%;
+        
+        padding: 1rem;
+        background: var(--dark-background);
+        color: yellowgreen;
+        text-align: center;
+
+    }
+
+    
+   .separator{
+    grid-column: 1 / span 4;
+   }
+   .flex{
+    justify-content: center;
+   }
+
+    .privacy-container{
+        grid-column: 1 / span 4;
+
+    }
+   
+    .flex-column-space{
+        justify-content: space-between;
+    }
+
+
+    .social-media{
+        justify-content: center;
+
+    }
+
+    .social-media img{
+        filter: invert(100%);
+    }
+
+    section ul li{
+        margin-top: 8px; 
+        list-style: none;   
+    }
+
+    section a:hover{
+        color: lightgreen;
+    }
+
+
+    a{
+        text-decoration: none;
+        color:white;
+    }
+
+    .privacy ul li{
+        list-style: none;
+    }
+
+    @media (max-width: 768px){
+        footer{
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .privacy-container ul li{
+            font-size: max(1.5vw, 1.5vh);
+        }
+
+    }
+</style>

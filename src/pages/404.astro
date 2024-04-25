@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+<Layout title='No encontrado'>
+
+    <div class="wrapper">
+  
+        <div class="wrapper-inner">
+            <img src="/images/404.svg" alt="logo">
+            <h1><span>404 :</span> No encontrado</h1> 
+        </div>
+        
+      </div>
+
+</Layout>
+
+
+<style>
+
+.wrapper{
+  display:grid;
+  align-content:center;
+  justify-content:center;
+  width:100%;
+  height:100vh;
+  background: linear-gradient(45deg, #1c4626   0%, #FFFB7D 100%);
+}
+img{
+  height: max(10vw, 8vh);
+  aspect-ratio:1;
+  
+}
+.wrapper-inner{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  max-height:100%;
+  color: white;
+  font-size:max(4vw, 3vh);
+}
+
+.wrapper h1 span{
+  color: #E0CCFA;
+}
+
+</style>

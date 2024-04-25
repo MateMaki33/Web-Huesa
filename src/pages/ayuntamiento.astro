@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StyledSection from '../components/styledsection.astro';
+import NormalSection from '../components/flgridsection.astro';
+import Cardvue from '../components/cardvue.vue';
+import Movecard from '../components/movecard.astro';
+import Simpledescription from '../components/simpledescription.astro';
+---
+
+<Layout title='Ayuntamiento'>
+
+    <section class='alcalde-container flex'>
+
+        <div class="alcalde-card-wrapper">
+           <Cardvue altText='Alcalde' cardTitle="Angel Padilla Romero" className='card-flex-column-100' image='/images/alcalde.jpg' captionImg="" >
+
+            <ul class="alcalde-links flex">
+                <li><a href="" title="Enlace externo: "><img src="/images/icons/facebook2.svg"></a></li>
+                <li><a href="" title="Enlace externo: "><img src="/images/icons/instagram.svg"></a></li>
+                <li><a href="" title="Enlace externo: "><img src="/images/icons/twitter.svg"></a></li>
+            </ul>
+
+           </Cardvue>  
+        </div>
+        
+
+       <Simpledescription title='¡ Te saluda el Alcalde !'>
+        <p>Es para mi un honor, como alcalde de <strong>Huesa</strong> , darte la bienvenida a nuestro municipio a través de esta ventana al mundo que es Internet.</p><br>
+
+        <p>Déjame mostrarte cómo se organiza el Ayuntamiento</p>
+
+       </Simpledescription>
+        
+    </section>
+
+    <StyledSection idName='presentacion' displayPosition='center'>
+        <h1>Concejalías y organigrama</h1>      
+    </StyledSection>
+
+    
+
+    <section class="concejalias-wrapper" >
+
+        <div class="concejalias-inner" id="concejalias-wrapper">
+            <Movecard title='D.Pablo Carmona Jordán' content='C1º Teniente de Alcalde'></Movecard>
+            <Movecard title='Dª Francisca Romero Alcalá' content='Concejala de las áreas de Igualdad, Bienestar Social y Salud, Tercera Edad y Educación'></Movecard>
+            <Movecard title='D. Manuel Moreno Padilla' content='Concejal de las áreas de Cultura y Deporte, Economia y Hacienda'></Movecard>
+            <Movecard title='Dª Isabel Martínez Moreno' content='Concejala de las áreas de Turismo, Juventud y Tiempo Libre'></Movecard>
+            <Movecard title='Dª María Francisca Moreno Esquinas' content='Delegada para la aldea de Cerrillo'></Movecard>
+            <Movecard title='D.Pablo Carmona Jordán' content='Delegado para la aldea de Ceal'></Movecard>
+            <Movecard title='Manuel Vilar Sierra' content='Partido Popular'></Movecard>
+            <Movecard title='José Luis Padilla Romero' content='Partido Popular'></Movecard>
+            <Movecard title='Yolanda Sáez Cuevas' content='Partido Popular'></Movecard>
+            <Movecard title='Laura Alcalá Molina' content='IULV-CA'></Movecard>
+            <Movecard title='Jaime Marín Aguilar' content='IULV-CA'></Movecard>
+        </div>
+
+    </section>
+
+    <StyledSection skew='left' idName='presentacion' displayPosition='center'>
+              <h1>Nuestras Sedes</h1>
+    </StyledSection>
+
+    <div style="height:max(10vh, 10vw)"></div>
+
+
+    <NormalSection className='section-grid-2' title='Centro Municipal de Informacion a la Mujer'>
+
+        <div class="womens-bow" id="womens-information"> </div>
+        <img src="/images/ayuntamiento.jpg" alt="Ayuntamiento de Huesa">
+        <article>
+            <p>El <strong style="color:pink">Centro Municipal de Información a la Mujer (CMIM)</strong> de Guadiana Menor nace gracias a la voluntad de colaboración y trabajo de las administraciones locales de los Excelentísimos Ayuntamientos de Huesa, Quesada, Hinojares, Larva y Pozo Alcón, a través de un convenio con el Instituto Andaluz De La Mujer (IAM). A través de dicho convenio se pone en marcha el 14 de Febrero de 2009, un dispositivo específico y gratuito dirigido a TODAS LAS MUJERES DE LA COMARCA.</p>
+        </article>
+
+        <article>
+            <p><strong style="color:pink">POR Y PARA LAS MUJERES</strong></p>
+        </article>
+
+        <article>
+            <p><strong style="color:pink">IGUALDAD DE OPORTUNIDADES, LA PREVENCIÓN y LA ELIMINACIÓN DE LA VIOLENCIA DE GÉNERO.</strong></p>
+        </article>
+
+        <Movecard title='Horario' content='JUEVES DE 9:30 A 14:30. VIERNES DE 8:00 A 14:30 TELÉFONO: 686 513 876'></Movecard>
+        <Movecard title='Participación'>
+            <ul style=" color: white; text-align:start;">
+              <li>Fomento de la participación de las mujeres en todos los aspectos de la vida</li>
+                <li>Funcionamiento y dinamización de asociaciones de mujeres.</li>
+                <li>Coordinación y desarrollo de programas de coeducación con los centros educativos.</li>
+                <li>Campañas de sensibilización.</li>
+            </ul>
+        </Movecard>
+        <Movecard title='Información'>
+            <ul style=" color: white;text-align:start;">
+                <li>Temas relacionados con la igualdad o discriminación de género.</li>
+                <li>Recursos sociales y Servicios especializados, y en su caso derivación.</li>
+                <li>Asociaciones de mujeres.</li>
+                <li>Actividades culturales</li>
+                <li>Subvenciones para asociaciones, emprendedoras, etc.</li>
+            </ul>
+        </Movecard>
+
+        <Movecard title='Asesoría Jurídica'>
+            <ul style=" color: white;text-align:start;">
+                <li>Ruptura Matrimonial</li>
+                <li>Guarda y custodia de l@s hij@s</li>
+                <li>Pensiones alimenticias</li>
+                <li>Bienes</li>
+                <li>Malos tratos</li>
+                <li>Abusos sexuales</li>
+                <li>Trámites de justicia gratuita</li>
+                <li>Solicitud de medidas de protección</li>
+            </ul>
+        </Movecard>
+    </NormalSection>
+
+    <NormalSection className='section-flex-column'>
+           <Simpledescription title='Ayuntamiento de Huesa'>
+
+            <ul id="social-services">
+                <li>Dirección: Plaza de la Constitución,11</li>
+                <li>Teléfono: 953 715 009 - Fax: 953715 672</li>
+                <li>Email: ayuntamiento@huesa.es</li>
+                <li>Abierto de 8:00h a 15:00h</li>
+            </ul>
+    
+           </Simpledescription>
+
+           <Simpledescription title='Centro de Servicios Sociales'>
+
+            <ul>
+                <li>Dirección: Plaza de la Constitución,11</li>
+                <li>Teléfono: 953 715 009 - Fax: 953715 672</li>
+                <li>Email: ayuntamiento@huesa.es</li>
+                <li>Horario de atención: Martes, de 10,30 a 11,30</li>
+            </ul>
+    
+           </Simpledescription>
+
+           
+    </NormalSection>
+
+
+</Layout>
+
+
+<style>
+
+.alcalde-container{
+    
+    position: relative;
+    padding: 1rem;
+    margin-top: 10vh;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100vh;
+    background-image: url('/images/olivossketch.jpg');
+    background-size: cover;
+
+  
+}
+.alcalde-card-wrapper{
+    max-width: 30vw;
+    max-height: 80%;
+
+    @media(max-width: 768px){
+      min-width: 50vw;
+    }
+}
+
+.alcalde-links {
+    list-style: none;
+    
+
+}
+.alcalde-links li:hover img {
+    filter: invert(100%);
+    transition: .5s;
+
+}
+
+
+
+.concejalias-wrapper{
+    padding:2rem;
+    margin-top: 10vh;
+    display: grid;
+    justify-items: center;
+    min-width: 100vw;
+    backdrop-filter: blur(20px);
+    
+    
+
+}
+
+.concejalias-inner{
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3,20vw);
+    gap: 2rem;
+    
+}
+
+.womens-bow{
+    background-image: url("/images/womensday.png");
+    background-size: cover;
+    position: absolute;
+    z-index: 0;
+    max-width: 30vw;
+    aspect-ratio: 1;
+    inset:0;
+    
+}
+
+
+@media(max-width:768px){
+
+    .alcalde-container{
+        flex-direction: column;
+        margin-top: 10vh;
+    }
+
+   
+
+    .concejalias-wrapper{
+        padding: .5rem;
+    }
+
+    .concejalias-inner{
+        grid-template-columns: 1fr;
+    }
+
+
+        
+    }
+
+
+
+</style>

@@ -1,0 +1,50 @@
+---
+export interface Props {
+    title?:string;
+} 
+
+const{title} = Astro.props;
+
+---
+
+<article class="alcalde-description">
+    <h1>{title}</h1>
+    <div class="alcalde-description-inner">
+
+        <slot/>
+        
+        
+    </div>
+</article>
+
+
+
+<style>
+    .alcalde-description{
+    position: relative;
+    padding: 2rem;
+    width: 70%;
+    background-color: #ffffff;
+    border: solid;
+    border-radius: 20px;
+    box-shadow: var(--shadow-black);
+    
+}
+
+.alcalde-description:after{
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent var(--dark-background) transparent;
+  transform: rotate(-90deg);
+  transition: 1s;
+
+  & @media(max-width:768px){
+    top: -10px;
+    left: 30%;
+    rotate: 90deg;
+}
+</style>

@@ -1,0 +1,146 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Diamondgrid from "../components/diamondgrid.astro";
+import Gastronomycomponent from "../components/gastronomycomponent.vue";
+import Normalcarousel from "../components/normalcarousel.vue";
+import StyledSection from "../components/styledsection.astro";
+---
+
+<Layout title="El municipio">
+  <Gastronomycomponent client:load>
+
+    <div class="gastronomy-container-image" data-position-down><a href="../detalles/migas"><img
+      transition:name="Migas"
+      src="../../images/migas-ruleras.jpg"
+      alt="migas ruleras"
+    /></a></div>
+    <div class="gastronomy-container-image" data-position-up><a href="../detalles/rosquillas"><img 
+      transition:name="Rosquillas"
+      src="../../images/rosquillas.jpg"
+      alt="rosquillas caseras dulces"
+    /></a></div>
+    <div class="gastronomy-container-image" data-position-right> <a href="../detalles/galianos"><img  
+      transition:name="Galianos"
+      src="../../images/galianos-jaen.jpg"
+      alt="galianos de jaén"
+    /></a></div>
+    <div class="gastronomy-container-image" data-position-left><a href="../detalles/embutidos"><img  
+      transition:name="Embutidos"
+      src="../../images/embutidos.jpg"
+      alt="comida rica"
+    /></a></div>
+    
+    
+   
+    
+  </Gastronomycomponent>
+  <Diamondgrid >
+
+    <!--............... INSERT 8 IMG .....................-->
+    <img src="/images/paisajes/baeza.jpg" alt="Imagen de Baeza, Jaén" />
+    <img loading="lazy"
+      src="/images/paisajes/cazorla_panoramica.jpg"
+      alt="Panorámica de Cazorla"
+    />
+    <img loading="lazy"
+      src="/images/paisajes/cazorla_torre.jpg"
+      alt=" Torre de un castillo en Cazorla"
+    />
+    <img loading="lazy"
+      src="/images/paisajes/espartero.jpg"
+      alt="espartero trabajando esparto"
+    />
+    <img src="/images/paisajes/huesaPanoramica.jpg" alt="Panorámica de Huesa" loading="lazy" />
+    <img src="/images/paisajes/olivares.jpg" alt="Olivar" loading="lazy" />
+    <img loading="lazy"
+      src="/images/paisajes/Pantano_del_Tranco.jpg"
+      alt="Pantano del tranco"
+    />
+    <img src="/images/paisajes/pueblo.jpg" alt="Un pueblo Andaluz" loading="lazy"/>
+
+    <!-- .................................................................................. -->
+  </Diamondgrid>
+
+
+  <StyledSection skew='left' idName='presentacion' displayPosition='center'>
+    <h1>Nuestro entorno</h1>
+  </StyledSection>
+
+  <Normalcarousel client:load></Normalcarousel>
+
+  
+</Layout>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttonNext = document.querySelector(".carousel-next");
+    const buttonBack = document.querySelector(".carousel-back");
+    const gastroCarousel = document.querySelector(
+      ".gastronomy-coroussel-inner"
+    ) as HTMLElement;
+
+
+    let degrees = 0;
+
+    buttonNext.addEventListener("click", () => {
+      degrees += 90;
+
+      if (degrees <= 360) {
+        gastroCarousel.style.setProperty("--degrees", `${degrees}deg`);
+
+      } else {
+        degrees = 0;
+        gastroCarousel.style.setProperty("--degrees", `${degrees}deg`);
+      }
+    });
+
+    buttonBack.addEventListener("click", () => {
+      degrees -= 90;
+
+      if (degrees >= -360 && degrees <= 360) {
+        gastroCarousel.style.setProperty("--degrees", `${degrees}deg`);
+      } else {
+        degrees = 0;
+        gastroCarousel.style.setProperty("--degrees", `${degrees}deg`);
+      }
+    });
+  });
+</script>
+
+<style>
+
+
+
+  .gastronomy-container-image{
+    grid-area:stack;
+    max-width: fit-content;
+    max-height: 50%;
+
+    &[data-position-down] {
+        transform: translateY(calc(100% + 2rem)) rotate(calc(var(--degrees)*-1));
+        transition: all 1s;
+      }
+      &[data-position-up] {
+        transform: translateY(calc(-100% - 2rem)) rotate(calc(var(--degrees)*-1));
+        transition: all 1s;
+
+
+      }
+      &[data-position-right] {
+        transform: translateX(calc(100% + 2rem)) rotate(calc(var(--degrees)*-1));
+        transition: all 1s;
+
+
+      }
+      &[data-position-left] {
+        transform: translateX(calc(-100% - 2rem)) rotate(calc(var(--degrees)*-1));
+        transition: all 1s;
+
+      }
+
+     
+  }
+  
+</style>
+

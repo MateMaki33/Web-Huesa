@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/hero.astro';
+import Cardvue from '../components/cardvue.vue';
+import StyledSection from '../components/styledsection.astro';
+import Statictics from '../components/statictics.astro';
+import NormalSection from '../components/flgridsection.astro';
+
+---
+
+<Layout title="Welcome to Huesa">
+	
+ <Hero></Hero>
+
+ <StyledSection skew="left" idName='presentacion'>
+  <div class="wrapper flex">
+     <Cardvue className="card-flex-column-100" cardTitle='Tierra de tradiciones' image='/images/paisajes/huesaPanoramica.jpg' altText='panorámica Huesa' captionImg=''>
+    <article>
+    <p><b>Otra parte del Jaén paraíso interior</b></p><br>
+    
+    <p>Huesa es un pueblo fantástico y acogedor, lleno de tesoros naturales por explotar y descubrir que nos han llevado a ser una ventana a través de la que mirar a nuestra historia.</p><br>
+   
+    </article>
+  </Cardvue>
+  </div>
+  
+ </StyledSection>
+
+ <div style="height:max(60vh, 40vw)"></div>
+
+ <NormalSection className='section-grid-2' idName='estadisticas' title='Algunos datos'>
+    <NormalSection className='section-flex-column'>
+      <Statictics image='/images/icons/mountain.svg' messure='Altura: 655m' altText='svg montaña'></Statictics>
+      <Statictics image='/images/icons/censo.svg' messure='Censo: 2541' altText='svg icono personas'></Statictics>
+    </NormalSection>
+
+    <NormalSection className='section-flex-column'>
+      <Statictics image='/images/icons/extension.svg' messure='Superficie: 137 Km2' altText='svg dibujo arbol'></Statictics>
+      <Statictics image='/images/icons/gentilicio.svg' messure='Gentilicio: Huesense, hueseño y osense.' altText='svg bocadillo nube'></Statictics>
+    </NormalSection>
+ </NormalSection>
+		
+</Layout>
+
+
+<style>
+
+  .wrapper{
+    width: 100%;
+    justify-content: center;
+    
+  }
+
+
+</style>
+
+

@@ -1,0 +1,146 @@
+---
+import type { GetStaticPaths } from "astro";
+import { Image } from 'astro:assets';
+
+
+import DetailLayout from "../../layouts/DetailLayout.astro";
+
+export const getStaticPaths = (() => {
+    
+    return [
+        {params: {id: 'migas'}},
+        {params: {id: 'rosquillas'}},
+        {params: {id: 'galianos'}},
+        {params: {id: 'embutidos'}},
+
+    ];
+}) satisfies GetStaticPaths;
+
+const {id} = Astro.params;
+
+
+const recipes = [
+  {
+    id: 'migas',
+    name: 'Migas',
+    urlImage: '/images/migas-ruleras.jpg',
+    urlRecipe:'https://www.youtube.com/watch?v=y15rztaMfE4',
+    ingredients: ['pan', 'ajo', 'aceite', 'sal'],
+    description: 'Las migas son un plato tradicional de la gastronomía española, preparadas a base de migas de pan, ajo, aceite de oliva y sal. Es un plato popular en muchas regiones de España y se suele servir como plato principal o acompañamiento en diversas ocasiones.'
+  },
+  {
+    id: 'rosquillas',
+    name: 'Rosquillas',
+    urlImage: '/images/rosquillas.jpg',
+    urlRecipe:'https://www.youtube.com/watch?v=KRXyAKRkRlE',
+    ingredients: ['harina', 'azúcar', 'huevos', 'aceite', 'anís'],
+    description: 'Las rosquillas son un dulce típico de la gastronomía española, especialmente popular en fiestas y celebraciones. Se trata de pequeños aros de masa dulce frita o horneada, a menudo aromatizados con ingredientes como anís, limón o naranja, y cubiertos con azúcar. Son un manjar delicioso y muy apreciado en la repostería española.'
+  },
+
+  {
+    id: 'galianos',
+    name: 'Galianos',
+    urlImage: '/images/galianos-jaen.jpg',
+    urlRecipe:'https://www.youtube.com/watch?v=wIIjbi0FLbw',
+    ingredients: ['conejo', 'perdiz', 'cebolla', 'aceite', 'pimiento', 'ajo', 'tomate maduro', 'laurel', 'Tortas gazpacheras', 'sal', 'tomillo', 'setas'],
+    description: 'Los gazpachos manchegos o galianos, son un plato campesino. Se empleaban carnes de caza, liebres, perdices, conejo o pollo, que se guisaban con productos de la huerta. Como gran curiosidad de este plato  es que se acompañan de las tostas o tortas cenceñas, un pan ácimo que tiene gran protagonismo en esta receta.'
+  },
+
+  {
+    id: 'embutidos',
+    name: 'Embutidos',
+    urlImage: '/images/embutidos.jpg',
+    urlRecipe:'https://www.youtube.com/watch?v=9PApBPRIfcg',
+    ingredients: ['cerdo', 'especias', 'arroz', 'cebolla', 'otros'],
+    description: 'Los embutidos son alimentos elaborados a partir de carnes, generalmente de cerdo, que se someten a un proceso de picado, condimentación y embutido en tripas naturales o artificiales. Este proceso de conservación permite que los embutidos se puedan consumir durante un período de tiempo más largo. En la gastronomía española, los embutidos son muy variados y populares, e incluyen productos como el chorizo, el salchichón, la morcilla y el jamón, entre otros. Su sabor y textura varían según los ingredientes y las técnicas de preparación utilizadas.'
+  },
+  // Agrega más objetos para otros platos
+];
+
+const recipe = recipes.find(recipe => recipe.id === id);
+
+---
+
+<DetailLayout title="Recetas">
+
+    <section class="recipes-section">
+        <div class="image-container">
+            <img transition:name={recipe.name} src={recipe.urlImage} alt="migas ruleras" width= "220" height="180"/>
+            
+        </div>
+        <div class="recipe-content">
+            <h1>{recipe.name}</h1>
+            <h4>Ingredientes</h4>
+            <ul class="ingredients">
+                {recipe.ingredients.map(ingredient => <li>{ingredient}</li>)}
+            </ul>
+            <p>{recipe.description}</p>
+            <a href={recipe.urlRecipe} target="_blank" title="Enlace a youtube"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" ><path d="M616-242q-27 1-51.5 1.5t-43.5.5h-41q-71 0-133-2-53-2-104.5-5.5T168-257q-26-7-45-26t-26-45q-6-23-9.5-56T82-447q-2-36-2-73t2-73q2-30 5.5-63t9.5-56q7-26 26-45t45-26q23-6 74.5-9.5T347-798q62-2 133-2t133 2q53 2 104.5 5.5T792-783q26 7 45 26t26 45q6 23 9.5 56t5.5 63q2 36 2 73v17q-19-8-39-12.5t-41-4.5q-83 0-141.5 58.5T600-320q0 21 4 40.5t12 37.5ZM400-400l208-120-208-120v240Zm360 200v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/></svg></a>
+        </div>
+
+    </section>
+
+
+</DetailLayout>
+
+
+<style>
+  .recipes-section{
+    display: flex;
+    padding: 2rem;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: var(--dark-background) ;
+    backdrop-filter: blur(10px);
+    color: white;
+
+    @media (max-width:1024px){
+      flex-direction: column;
+      gap:1rem;
+    }
+  }
+
+  .image-container{
+    border-radius: 50%;
+    width: 30vw;
+    min-height: max(30vw, 30vh);
+    min-width: max(30vw, 30vh);
+    overflow: hidden;
+    transition: 1s;
+
+  
+  }
+  .image-container img{
+    width: 100%;
+    height: fit-content;
+    display: block;
+    border-radius: 50%;
+    transition: 1s;
+  }
+
+  .recipe-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 50vw;
+
+    & h1{
+      margin-top: 5vh;
+    }
+
+    & a >svg{
+      width: max(5vw,8vh);
+     fill: red;
+    }
+
+    @media (max-width:1024px){
+      padding: 2rem;
+      min-width: 100vw;
+    }
+  }
+
+
+</style>
