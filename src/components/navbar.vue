@@ -134,10 +134,6 @@
   a.button:hover::after{
     width: 100%;
   }
-
-
-
-
   .dropdown-menu {
     position: relative;
     padding: 0.5rem;

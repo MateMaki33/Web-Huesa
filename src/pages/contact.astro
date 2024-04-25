@@ -7,6 +7,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title='Contacto'>
 
+<section class="contact">
 
     <NormalSection className='section-flex-column'>
         <Simpledescription title='Ayuntamiento de Huesa'>
@@ -21,4 +22,17 @@ import Layout from '../layouts/Layout.astro';
         </Simpledescription>
         
     </NormalSection>
+</section>
+    
 </Layout>
+
+<style>
+    .contact{
+        min-width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--dark-background);
+    }
+</style>
