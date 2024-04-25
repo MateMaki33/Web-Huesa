@@ -6,5 +6,5 @@ import vue from "@astrojs/vue";
 export default defineConfig({
   integrations: [vue()],
   site: 'https://MateMaki33.github.io',
-  base: 'HuesaAstro',
+  
 });
