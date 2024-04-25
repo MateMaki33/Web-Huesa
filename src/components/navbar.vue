@@ -16,8 +16,8 @@
             <a class="button">Inicio</a>
           </summary>
           <ul>
-            <li><a href="/HuesaAstro/#presentacion" >Presentacion </a></li>
-            <li><a href="/HuesaAstro/#estadisticas">Estadisticas</a></li>
+            <li><a href="/#presentacion" >Presentacion </a></li>
+            <li><a href="/#estadisticas">Estadisticas</a></li>
           </ul>
         </details>
   
@@ -26,10 +26,10 @@
             <a class="button">Ayuntamiento</a>
           </summary>
           <ul>
-            <li><a href="/HuesaAstro/ayuntamiento">Alcalde</a></li>
-            <li><a href="/HuesaAstro/ayuntamiento/#concejalias-wrapper">Concejalías</a></li>
-            <li><a href="/HuesaAstro/ayuntamiento/#womens-information">CMIM</a></li>
-            <li><a href="/HuesaAstro/ayuntamiento/#social-services">Servicios Sociales</a></li>
+            <li><a href="/ayuntamiento">Alcalde</a></li>
+            <li><a href="/ayuntamiento/#concejalias-wrapper">Concejalías</a></li>
+            <li><a href="/ayuntamiento/#womens-information">CMIM</a></li>
+            <li><a href="/ayuntamiento/#social-services">Servicios Sociales</a></li>
           </ul>
         </details>
   
@@ -38,9 +38,9 @@
             <a class="button">Servicios</a>
           </summary>
           <ul>
-            <li ><a href="/HuesaAstro/services/#constructions-wrapper" class="nav-link" data-section="obras">Obras</a></li>
-            <li ><a href="/HuesaAstro/services/#catastro" class="nav-link" data-section="catastro">Catastro</a></li>
-            <li ><a href="/HuesaAstro/services/#guarderia" class="nav-link" data-section="guarderia">Guardería</a></li>
+            <li ><a href="/services/#constructions-wrapper" class="nav-link" data-section="obras">Obras</a></li>
+            <li ><a href="/services/#catastro" class="nav-link" data-section="catastro">Catastro</a></li>
+            <li ><a href="/services/#guarderia" class="nav-link" data-section="guarderia">Guardería</a></li>
             <li><a href="https://huesa.sedelectronica.es/info.0" target="_blank" title="Enlace externo a www.catastro.meh">Sede Electronica</a></li>
           </ul>
         </details>
@@ -50,14 +50,14 @@
             <a class="button">Municipio</a>
           </summary>
           <ul>
-            <li><a href="/HuesaAstro/municipio/#gastronomia">Gastronomía</a></li>
-            <li><a href="/HuesaAstro/municipio/#entorno">Entorno</a></li>
-            <li><a href="/HuesaAstro/municipio/#locales">Locales</a></li>
+            <li><a href="/municipio/#gastronomia">Gastronomía</a></li>
+            <li><a href="/municipio/#entorno">Entorno</a></li>
+            <li><a href="/municipio/#locales">Locales</a></li>
           </ul>
         </details>
   
         <div class="icons-nav-bar flex">
-          <a href="/HuesaAstro/contact" title="enlace a contacto"><img class="nav-icons" src="../../images/icons/telephone.svg" alt="icono telefono"/></a>
+          <a href="/contact" title="enlace a contacto"><img class="nav-icons" src="../../images/icons/telephone.svg" alt="icono telefono"/></a>
         </div>
       </ul>
     </nav>
