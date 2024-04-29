@@ -4,6 +4,7 @@ import { isValidEmail } from "../services/validateContactForm";
 const errors = { username: "", email: "", message: "", policy: "" };
 if (Astro.request.method === "POST") {
   try {
+  console.log("request");
     const data = await Astro.request.formData();
     const name = data.get("username");
     const email = data.get("email");
@@ -14,13 +15,13 @@ if (Astro.request.method === "POST") {
       errors.policy += "Please accept the privacy policy. ";
     }
     if (typeof name !== "string" || name.length < 1) {
-      errors.username += "Please enter a username. ";
+      errors.username += "Please enter a username.";
     }
     if (typeof message !== "string" || message.length < 1) {
-      errors.message += "Please enter a message. ";
+      errors.message += "Please enter a message.";
     }
     if (typeof email !== "string" || !isValidEmail(email)) {
-      errors.email += "Email is not valid. ";
+      errors.email += "Email is not valid.";
     }
 
     const hasErrors = Object.values(errors).some((msg) => msg);
@@ -45,7 +46,7 @@ if (Astro.request.method === "POST") {
     {errors.username && <p>{errors.username}</p>}
 
     <label for="email">Email</label>
-    <input type="email" name="email" id="email" required />
+    <input type="email" name="email" id="email" required/>
     {errors.email && <p>{errors.email}</p>}
 
     <label for="message">Mensaje </label>
@@ -113,6 +114,9 @@ if (Astro.request.method === "POST") {
         box-shadow: var(--shadow-olive);
     }
 
+  }
+  p{
+    color: rgb(234, 106, 38);
   }
   
 </style>
