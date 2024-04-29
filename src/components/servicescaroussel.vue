@@ -10,13 +10,17 @@
 
       <ul data-slides>
         <li class="slide" data-active data-section="obras">
-          <Cardvue :altText="'imagen de una construcción'" :cardTitle="'Obras'" :className="'card-flex'"
-            :image="'/images/bulldocer.jpg'">
+          <Cardvue 
+          :altText="'imagen de una construcción'" 
+          :cardTitle="'Obras'" 
+          :className="'card-flex'"
+          :image="'/images/bulldocer.jpg'"
+          :data-bg-color="'dark'">
             <p style="font-size:min(6vw, 3.5vh)">
               Descarga toda la documentación referente a la
               <strong>realización de obras</strong> en el siguiente icono.
             </p>
-            <Circularmenu imageSrc="../images/icons/construction_icon.svg">
+            <Circularmenu :imageSrc="'../images/icons/construction_icon.svg'" :allText="'icono de un albañil'">
               <ul>
                 <li><a href="/documents/Solicitud_OMayor.pdf" download title=" Descarga Solicitud de Obra Mayor">Solicitud Obra Mayor</a></li>
                 <li><a href="/documents/Dtos_Obra_Mayor.pdf" download title=" Descarga documentos necesarios Obra Mayor">Documentacion Obra</a></li>
@@ -28,8 +32,12 @@
         </li>
 
         <li class="slide" data-section="guarderia">
-          <Cardvue :altText="'niño pintando'" :cardTitle="'Guarderia'" :className="'card-flex'"
-            :image="'/images/guarderia.jpg'">
+          <Cardvue 
+          :altText="'niño pintando'" 
+          :cardTitle="'Guarderia'" 
+          :className="'card-flex'"
+          :image="'/images/guarderia.jpg'"
+          :data-bg-color="'dark'">
             <p style="font-size:min(6vw, 3.5vh)">
               Somos conscientes de la dificultad de
               <strong>cuidar a nuestros pequeños</strong> durante las temporadas
@@ -38,7 +46,7 @@
               documentación en el siguiente icono.
             </p>
 
-            <Circularmenu imageSrc="../images/icons/baby_icon.svg">
+            <Circularmenu :imageSrc="'../images/icons/baby_icon.svg'" :allText="'icono de un bebé'">
               <ul>
                 <li><a href="/documents/Solicit_Guard.pdf" download title=" Descarga Solicitud de Guarderia">Solicitud Guardería</a></li>
                 <li><a href="/documents/Dtos_Guard.pdf" download title=" Descarga documentos necesarios guarderia">Documentacion Guardería</a></li>
@@ -48,8 +56,12 @@
         </li>
 
         <li class="slide" data-section="catastro">
-          <Cardvue :altText="'maqueta 3d casa'" :cardTitle="'Catastro'" :className="'card-flex'"
-            :image="'/images/catastro.jpg'">
+          <Cardvue 
+          :altText="'maqueta 3d casa'" 
+          :cardTitle="'Catastro'" 
+          :className="'card-flex'"
+          :image="'/images/catastro.jpg'"
+          :data-bg-color="'dark'">
             <p style="font-size:min(6vw, 3.5vh)">
               Ponemos a tu disposición el enlace a los procedimientos y trámites
               relacionados con el Catastro a traves de la página
@@ -207,7 +219,7 @@ onMounted(() => {
         right: 1.5rem;
     }
     strong{
-   color: purple;
+   color: rgb(193, 219, 132);
 }
 
 .button{

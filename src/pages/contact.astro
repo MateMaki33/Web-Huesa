@@ -2,6 +2,7 @@
 import NormalSection from '../components/flgridsection.astro';
 import Simpledescription from '../components/simpledescription.astro';
 import Layout from '../layouts/Layout.astro';
+import Contactform from '../components/contactform.astro';
 
 ---
 
@@ -22,7 +23,11 @@ import Layout from '../layouts/Layout.astro';
         </Simpledescription>
         
     </NormalSection>
+
+    
 </section>
+
+<Contactform></Contactform>
     
 </Layout>
 
@@ -34,5 +39,9 @@ import Layout from '../layouts/Layout.astro';
         flex-direction: column;
         justify-content: center;
         background: var(--dark-background);
+
+        @media (max-width: 768px){
+            min-height: 50vh;
+        }
     }
 </style>

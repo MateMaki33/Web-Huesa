@@ -5,6 +5,9 @@ import NormalSection from '../components/flgridsection.astro';
 import Cardvue from '../components/cardvue.vue';
 import Movecard from '../components/movecard.astro';
 import Simpledescription from '../components/simpledescription.astro';
+
+import { Image } from 'astro:assets';
+import ayuntamientoImage from '../../public/images/ayuntamiento.jpg'
 ---
 
 <Layout title='Ayuntamiento'>
@@ -67,7 +70,7 @@ import Simpledescription from '../components/simpledescription.astro';
     <NormalSection className='section-grid-2' title='Centro Municipal de Informacion a la Mujer'>
 
         <div class="womens-bow" id="womens-information"> </div>
-        <img src="/images/ayuntamiento.jpg" alt="Ayuntamiento de Huesa">
+        <Image src={ayuntamientoImage} alt="Ayuntamiento de Huesa" loading='lazy'></Image>
         <article>
             <p>El <strong style="color:pink">Centro Municipal de Información a la Mujer (CMIM)</strong> de Guadiana Menor nace gracias a la voluntad de colaboración y trabajo de las administraciones locales de los Excelentísimos Ayuntamientos de Huesa, Quesada, Hinojares, Larva y Pozo Alcón, a través de un convenio con el Instituto Andaluz De La Mujer (IAM). A través de dicho convenio se pone en marcha el 14 de Febrero de 2009, un dispositivo específico y gratuito dirigido a TODAS LAS MUJERES DE LA COMARCA.</p>
         </article>

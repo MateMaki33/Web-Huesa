@@ -1,5 +1,5 @@
 <template>
-    <article :class="className">
+    <article :class="className" :data-bg-color="bgColor">
       <div class="card-image">
         <figure>
           <img :src="image" class="image" :alt="altText">
@@ -35,6 +35,10 @@
     className: {
       type: String,
       required: true
+    },
+    bgColor:{
+      type: String,
+      required: false
     }
   });
   </script>
@@ -71,6 +75,12 @@
     inset: 5% 0 0 7%;
     border-radius: 20px;
     box-shadow: 10px 10px 110px 12px rgba(173, 199, 6, 0.87);
+  }
+
+  .card-flex[data-bg-color="dark"]{
+    background: var(--dark-background);
+    box-shadow: none;
+
   }
   
   .card-flex .image {

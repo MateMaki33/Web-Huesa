@@ -10,8 +10,15 @@
 <script setup>
 import { defineProps } from 'vue';
 
-const { imageSrc } = defineProps({
-  imageSrc: String
+const props = defineProps({
+  imageSrc: {
+      type: String,
+      required: true
+    },
+    altText: {
+      type: String,
+      required: true
+    },
 });
 </script>
 

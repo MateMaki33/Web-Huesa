@@ -11,7 +11,7 @@ const{image, messure, altText} = Astro.props;
 
 <article class="medidores-container">
     <div class="medidor-group">
-      <img loading="lazy" class="img" src={image} alt={altText}/>
+      <img loading="eager" class="img" src={image} alt={altText}/>
       <div class="medidor">
         <p>{messure}</p>
         <div class="progress-bar">
