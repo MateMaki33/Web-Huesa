@@ -6,7 +6,7 @@ import node from "@astrojs/node";
 // https://astro.build/config
 export default defineConfig({
   integrations: [vue()],
-  output: "static",
+  output: "server",
   site: 'https://MateMaki33.github.io'
   
 });
