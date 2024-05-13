@@ -8,8 +8,8 @@ export default defineConfig({
   integrations: [vue()],
   output: "server",
   site: 'https://MateMaki33.github.io',
-  addapter: node({
-    mode:"standalone"
+  adapter: node({
+    mode:"middleware"
   })
   
 });
