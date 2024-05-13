@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+erimport { defineConfig } from 'astro/config';
 import vue from "@astrojs/vue";
 
 import node from "@astrojs/node";
@@ -6,8 +6,9 @@ import node from "@astrojs/node";
 // https://astro.build/config
 export default defineConfig({
   integrations: [vue()],
-  output: "static",
-  site: 'https://MateMaki33.github.io'
+  output: "server",
+  site: 'https://MateMaki33.github.io',
+  base: '/Matemaki33.github.io'
 
   
 });
