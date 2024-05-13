@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [vue()],
   output: "server",
   site: 'https://MateMaki33.github.io',
-  base: '/Matemaki33.github.io'
+  base: '/Matemaki33.github.io',
 
   
 });
