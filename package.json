@@ -12,6 +12,10 @@
   "dependencies": {
     "@astrojs/vue": "^4.0.8",
     "astro": "^4.5.2",
+    "nodemailer": "^6.9.13",
     "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.15"
   }
 }

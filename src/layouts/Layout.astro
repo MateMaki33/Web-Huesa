@@ -99,6 +99,15 @@ h1{
 	flex-direction: column;
 	gap: var(--gap);
 }
+.noVisible{
+  opacity: 0;
+  transform: translate(-10vh, 0vh);
+  transition: all 1s;
+}
+.visible{
+  opacity: 1;
+  transform: translate(0, 0);
+}
 
 
 </style>
@@ -106,16 +115,25 @@ h1{
 <script>
   window.addEventListener('scroll', function() {
   const body = document.body;
-  const image = new Image(); // Preload image for smoother rendering
-  image.src = '/images/olives.jpg'; // Adjust the path if necessary
+  const image = new Image(); 
+  image.src = '/images/olives.jpg'; 
+  const scrollTop = window.scrollY; 
 
-  const scrollTop = window.scrollY; // Get current scroll position
-
-  // Calculate parallax movement based on scroll position (adjust multiplier as needed)
-  const parallaxMovement = scrollTop * 0.4; // Adjust multiplier for desired effect
-
-  // Update background position using CSS background-position
+  const parallaxMovement = scrollTop * 0.4; 
   body.style.backgroundPositionY = `${parallaxMovement}px`;
+
+  let elements = document.getElementsByClassName('noVisible');
+  let screenSize = window.innerHeight;
+  
+    for (let i = 0; i < elements.length; i++) {
+      let element = elements[i];
+      
+      if (element.getBoundingClientRect().top + (screenSize / 3) < screenSize) {
+        element.classList.add('visible');
+      } else {
+        element.classList.remove('visible');
+      }
+    }
 });
 
 

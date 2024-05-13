@@ -1,6 +1,8 @@
 ---
 import { isValidEmail } from "../services/validateContactForm";
 
+import sendMailAsync from "../services/sendMail";
+
 const errors = { username: "", email: "", message: "", policy: "" };
 if (Astro.request.method === "POST") {
   try {
@@ -26,8 +28,10 @@ if (Astro.request.method === "POST") {
 
     const hasErrors = Object.values(errors).some((msg) => msg);
     if (!hasErrors) {
-      //AQUI MANDO EN MSG
-      return Astro.redirect("/login");
+
+      //AQUI MANDO EL MSG
+
+      await sendMailAsync(email,name,message);
     }
   } catch (error) {
     if (error instanceof Error) {
