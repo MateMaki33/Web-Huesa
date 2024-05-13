@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^8.2.5",
     "@astrojs/vue": "^4.0.8",
     "astro": "^4.5.2",
     "nodemailer": "^6.9.13",
