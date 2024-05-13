@@ -7,8 +7,5 @@ import node from "@astrojs/node";
 export default defineConfig({
   integrations: [vue()],
   output: "server",
-  site: 'https://MateMaki33.github.io',
-  base: '/Matemaki33.github.io',
-
-  
+  site: 'https://MateMaki33.github.io'
 });
