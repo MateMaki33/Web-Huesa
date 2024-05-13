@@ -8,7 +8,6 @@ export default defineConfig({
   integrations: [vue()],
   output: "server",
   site: 'https://MateMaki33.github.io',
-  base: 'https://matemaki33.github.io',
   adapter: node({
     mode: "standalone"
   })
