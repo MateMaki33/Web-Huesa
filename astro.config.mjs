@@ -9,7 +9,7 @@ export default defineConfig({
   output: "server",
   site: 'https://MateMaki33.github.io',
   addapter: node({
-    mode:"middleware"
+    mode:"standalone"
   })
   
 });
