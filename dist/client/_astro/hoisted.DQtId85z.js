@@ -1,0 +1,1 @@
+import"./ViewTransitions.astro_astro_type_script_index_0_lang.D9HCc-z0.js";window.addEventListener("scroll",function(){const o=document.body,n=new Image;n.src="/images/bread.jpg";const s=window.scrollY*.4;o.style.backgroundPositionY=`${s}px`});
