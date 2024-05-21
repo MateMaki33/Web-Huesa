@@ -1,0 +1,33 @@
+---
+import posts from "../collections/post.json";
+import Movecard from "./movecard.astro";
+
+const { count } = Astro.props;
+const postsLoop = posts.slice(0, count);
+---
+
+{
+  postsLoop.map((post) => {
+    return (
+      <div class="notice-container-inner" onclick={`location.href = '${post.link}'`}>
+        <Movecard title={post.title} content={post.description}>
+
+        <time datetime={post.dateFormatted}>{post.dateFormatted}</time>
+
+      </Movecard>
+      </div>
+
+    );
+  })
+}
+
+
+<style>
+  .notice-container-inner{
+    padding: 1rem;
+  }
+  .notice-container-inner:hover{
+    cursor: pointer;
+  }
+</style>
+

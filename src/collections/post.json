@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Fiestas de Huesa",
+		"description": "Prepárate para disfrutar de la gastronomía, el arte y el entretenimiento en nuestras fiestas",
+		"dateFormatted": "20 de Mayo, 2023",
+		"link": "/post/fiestas"
+	},
+	{
+		"title": "Patrón Municipal",
+		"description": "Fiesta en honor a nuestro patrón, San Silvestre. Se celebra el 31 de Diciembre",
+		"dateFormatted": "26 de Mayo, 2023",
+		"link": "/post/san-silvestre"
+	}
+]

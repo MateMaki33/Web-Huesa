@@ -8,8 +8,7 @@ const transporter = nodemailer.createTransport({
     auth: {
       user: import.meta.env.MAIL_USER,
       pass: import.meta.env.MAIL_PWD,
-    },
-    from: `"Nombre Genérico" <noreply@example.com>`,
+    }
   });
 
 
@@ -17,11 +16,11 @@ const transporter = nodemailer.createTransport({
     try {
       console.log("hola");
       const info = await transporter.sendMail({
-      from: `"${name} 👻 " <${senderEmail}>`, 
-      to: "matemaki33@gmail.com", 
-      subject: "Contacto desde Huesa 💯", 
-      text: `"${message}`,
-      html: `"<b>${message}</b>"`, 
+      from: `"Web Ayuntamiento"  <${senderEmail}>`, 
+      to: import.meta.env.MAIL_USER, 
+      subject: "Contacto desde Huesa", 
+      text: `${message}`,
+      html: `<b>Mensaje enviado por</b> ${name}<br/> <b>Correo de contacto:</b> ${senderEmail}<br/><br/>${message}`, 
     });
     } catch (error) {
       alert(error);

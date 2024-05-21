@@ -12,52 +12,59 @@
   
         
         <details class="dropdown-menu">
-          <summary role="button">
-            <a class="button">Inicio</a>
+          <summary>
+            <button type="button" class="button">Inicio</button>
           </summary>
           <ul>
-            <li><a href="/#presentacion" >Presentacion </a></li>
-            <li><a href="/#estadisticas">Estadisticas</a></li>
+            <li><a href="/#presentacion" title="Enlace interno inicio" aria-label="inicio">Presentacion </a></li>
+            <li><a href="/#estadisticas" title="Enlace interno estadísticas" aria-label="estadísticas">Estadisticas</a></li>
           </ul>
         </details>
   
         <details class="dropdown-menu">
-          <summary role="button">
-            <a class="button">Ayuntamiento</a>
+          <summary>
+            <button type="button" class="button">Ayuntamiento</button>
           </summary>
           <ul>
-            <li><a href="/ayuntamiento">Alcalde</a></li>
-            <li><a href="/ayuntamiento/#concejalias-wrapper">Concejalías</a></li>
-            <li><a href="/ayuntamiento/#womens-information">CMIM</a></li>
-            <li><a href="/ayuntamiento/#social-services">Servicios Sociales</a></li>
+            <li><a href="/ayuntamiento" title="Enlace interno al alcalde" aria-label="alcalde">Alcalde</a></li>
+            <li><a href="/ayuntamiento/#concejalias-wrapper" title="Enlace interno a concejalías" aria-label="concejalías">Concejalías</a></li>
+            <li><a href="/ayuntamiento/#womens-information" title="Enlace interno centro mujer" aria-label="centro mujer">CMIM</a></li>
+            <li><a href="/ayuntamiento/#social-services" title="Enlace interno servicios sociales" aria-label="servicios sociales">Servicios Sociales</a></li>
+          </ul>
+        </details>
+
+        <details class="dropdown-menu">
+          <summary>
+            <a href="/notices" class="button" title="Enlace interno a noticias" aria-label="noticias">Noticias</a>
+          </summary>
+        </details>
+
+  
+        <details class="dropdown-menu">
+          <summary>
+            <button type="button" class="button">Servicios</button>
+          </summary>
+          <ul>
+            <li ><a href="/services/#constructions-wrapper" class="nav-link" data-section="obras" title="Enlace interno a obras" aria-label="obras">Obras</a></li>
+            <li ><a href="/services/#catastro" class="nav-link" data-section="catastro" title="Enlace interno a catastro" aria-label="catastro">Catastro</a></li>
+            <li ><a href="/services/#guarderia" class="nav-link" data-section="guarderia" title="Enlace interno guarderia" aria-label="guarderia">Guardería</a></li>
+            <li><a href="https://huesa.sedelectronica.es/info.0" target="_blank" title="Enlace externo a www.catastro.meh" aria-label="sede electrónica">Sede Electronica</a></li>
           </ul>
         </details>
   
         <details class="dropdown-menu">
-          <summary role="button">
-            <a class="button">Servicios</a>
+          <summary>
+            <button type="button" class="button">Municipio</button>
           </summary>
           <ul>
-            <li ><a href="/services/#constructions-wrapper" class="nav-link" data-section="obras">Obras</a></li>
-            <li ><a href="/services/#catastro" class="nav-link" data-section="catastro">Catastro</a></li>
-            <li ><a href="/services/#guarderia" class="nav-link" data-section="guarderia">Guardería</a></li>
-            <li><a href="https://huesa.sedelectronica.es/info.0" target="_blank" title="Enlace externo a www.catastro.meh">Sede Electronica</a></li>
-          </ul>
-        </details>
-  
-        <details class="dropdown-menu">
-          <summary role="button">
-            <a class="button">Municipio</a>
-          </summary>
-          <ul>
-            <li><a href="/municipio/#gastronomia">Gastronomía</a></li>
-            <li><a href="/municipio/#entorno">Entorno</a></li>
-            <li><a href="/municipio/#locales">Locales</a></li>
+            <li><a href="/municipio/#gastronomia" title="Enlace interno gastronomia" aria-label="gastronomía">Gastronomía</a></li>
+            <li><a href="/municipio/#entorno" title="Enlace interno entorno" aria-label="entorno">Entorno</a></li>
+            <li><a href="/municipio/#locales" title="Enlace interno locales" aria-label="locales">Locales</a></li>
           </ul>
         </details>
   
         <div class="icons-nav-bar flex">
-          <a href="/contact" title="enlace a contacto"><img class="nav-icons" src="../../images/icons/telephone.svg" alt="icono telefono"/></a>
+          <a href="/contact" title="enlace a contacto" aria-label="contacto" ><img class="nav-icons" src="../../images/icons/telephone.svg" alt="icono telefono"/></a>
         </div>
       </ul>
     </nav>
@@ -108,8 +115,9 @@
     visibility: hidden;
   }
 
-  a.button {
+  a.button, .button {
     display: inline-block;
+    background: none;
     padding: 1rem;
     border-radius: 50px;
     box-sizing: border-box;
@@ -119,7 +127,7 @@
     cursor: pointer;
   }
 
-  a.button::after
+  a.button::after,.button::after
   {
     position: absolute;
     content: "";
@@ -131,7 +139,7 @@
     transition: width .2s ease-in; 
   }
 
-  a.button:hover::after{
+   a.button:hover::after, .button:hover::after{
     width: 100%;
   }
   .dropdown-menu {
@@ -252,6 +260,13 @@ import { onMounted } from 'vue';
 onMounted(() => {
   const primaryNav = document.querySelector(".primary-navigation");
   const navToggle = document.querySelector(".mobile-nav-toggle");
+
+  document.querySelectorAll('details').forEach(details => {
+  const button = details.querySelector('.button');
+  button.addEventListener('click', () => {
+    details.toggleAttribute('open');
+  });
+});
 
   function handleNavLinkClick(event) {
     const targetSection = event.target.getAttribute('data-section');

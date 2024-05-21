@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PostLoop from '../components/post-loop.astro'
+import Simpledescription from '../components/simpledescription.astro';
+
+---
+
+<Layout title="Notices">
+
+    <section class="notices-section">
+      <div class="town-crier"></div>
+      <Simpledescription className="simple-description-transparent">
+        <PostLoop count="10" /> 
+      </Simpledescription>
+    </section>
+    
+</Layout>
+
+<style>
+
+.notices-section{
+    min-height: 100vh;
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    place-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr 2fr;
+
+    @media (max-width:768px){
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+
+
+.town-crier{
+    border-radius: 50%;
+    min-width: 100%;
+    aspect-ratio: 1;
+    background-image: url('images/pregonero.jpg');
+    background-size: cover;
+    
+
+}
+
+.notice-container-inner{
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+
+
+</style>

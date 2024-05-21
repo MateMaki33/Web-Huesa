@@ -1,11 +1,8 @@
 ---
 import NavBar from "../components/navbar.vue";
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
-import { ViewTransitions } from 'astro:transitions';
+import Simpledescription from "../components/simpledescription.astro";
+import Footer from "../components/footer.astro";
+const { frontmatter } = Astro.props;
 
 
 ---
@@ -18,14 +15,22 @@ import { ViewTransitions } from 'astro:transitions';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ViewTransitions />
+		<title>{frontmatter.title}</title>
 
 
 	</head>
 	<body>
 		<NavBar client:load></NavBar>
-		<slot/>
+    <main>
+
+		<section class="notice-details">
+			<Simpledescription className="simple-description-transparent">
+              <slot/>
+           </Simpledescription>
+		</section>
+      
+    </main>
+	<Footer></Footer>
 	</body>
 </html>
 <style is:global>
@@ -65,20 +70,38 @@ html {
   
 }
 
-body{
-	display: flex;
-	flex-direction: column;
-	overflow-x: hidden;
-	background-image: url('/images/bread.jpg');
-	background-size: cover;
+.notice-details{
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
 	
-
+	
+	&>*{
+		margin: auto;
+	}
+	
+}
+h2{
+	margin-block: 20px;
 }
 
-h1{
-	font-family: var(--ff-bebas);
-	font-size: max(6vw, 4vh);
-	z-index: 100;
+ol, ul {
+            margin-left: 1em;  /* Asegura que las listas estén alineadas con los párrafos */
+            padding: 10px;    /* Elimina el padding por defecto */
+            list-style-position: inside; /* Hace que el marcador esté dentro del contenedor <li> */
+        }
+li{
+	margin-top: 5px;
+}
+
+img{
+	max-width: 50%;
+}
+
+p:nth-of-type(1){
+
+	margin-top: 100px;
+
 }
 
 

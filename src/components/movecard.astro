@@ -2,13 +2,20 @@
 export interface Props {
   title:string;
   content?: string;
+  className?: string;
  
 }
+let classNameConcat ="";
+const{title, content, className} = Astro.props;
 
-const{title, content} = Astro.props;
+if (className){
+   classNameConcat = `tilting-card-wrapper ${className}`;
+}else{
+  classNameConcat = "tilting-card-wrapper"
+}
 ---
 
-<div class="tilting-card-wrapper noVisible">
+<div class={classNameConcat} >
     <div class="mouse-position-tracker"></div>
     <div class="mouse-position-tracker"></div>
     <div class="mouse-position-tracker"></div>
