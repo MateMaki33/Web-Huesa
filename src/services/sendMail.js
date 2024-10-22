@@ -14,7 +14,6 @@ const transporter = nodemailer.createTransport({
 
   async function sendMailAsync(senderEmail, name, message) {
     try {
-      console.log("hola");
       const info = await transporter.sendMail({
       from: `"Web Ayuntamiento"  <${senderEmail}>`, 
       to: import.meta.env.MAIL_USER, 
